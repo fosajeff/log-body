@@ -1,9 +1,9 @@
-const express = require('express');
+const express = require("express");
 
 const app = express();
 
-app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json())
 
 const PORT = process.env.PORT || 5000;
 
@@ -17,4 +17,4 @@ app.post('/', (request, response) => {
     response.json({ status: true })
 })
 
-app.listen(() => console.log("Listening on port:", PORT))
+app.listen(PORT, () => console.log("Listening on port:", PORT))
